@@ -7,7 +7,7 @@ This guide will walk you through the necessary steps to install and enable the n
 ## How to Use
 #### **1.  Modify the Configuration File**
 
-Before you begin, ensure you have installed all dependencies as described in the steps below.  Then, simply update the `model` field in the `model_configs. yaml` file at the project root to `PP-DocLayout_plus-L`.
+Update the `model` field in the `model_configs. yaml` file at the project root to `PP-DocLayout_plus-L`.
 
 > ```yaml
 > layout_config: 
