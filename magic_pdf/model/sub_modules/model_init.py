@@ -5,11 +5,17 @@ from magic_pdf.config.constants import MODEL_NAME
 from magic_pdf.model.model_list import AtomicModel
 from magic_pdf.model.sub_modules.layout.doclayout_yolo.DocLayoutYOLO import \
     DocLayoutYOLOModel
+from magic_pdf.model.sub_modules.layout.paddlex_layout.PaddleXLayoutModel import \
+    PaddleXLayoutModelWrapper
 
 def doclayout_yolo_model_init(weight, device='cpu'):
     if str(device).startswith("npu"):
         device = torch.device(device)
     model = DocLayoutYOLOModel(weight, device)
+    return model
+
+def paddex_layout_model_init(model_name: str, device: str):
+    model = PaddleXLayoutModelWrapper(model_name=model_name, device=device)
     return model
 
 class AtomModelSingleton:
@@ -41,6 +47,11 @@ def atom_model_init(model_name: str, **kwargs):
             atom_model = doclayout_yolo_model_init(
                 kwargs.get('doclayout_yolo_weights'),
                 kwargs.get('device')
+            )
+        elif kwargs.get('layout_model_name') == MODEL_NAME.PaddleXLayoutModel:
+            atom_model = paddex_layout_model_init(
+                model_name=kwargs.get('paddlex_model_name'),
+                device=kwargs.get('device')
             )
         else:
             logger.error('layout model name not allow')
