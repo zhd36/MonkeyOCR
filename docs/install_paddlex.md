@@ -37,4 +37,4 @@ Execute the following command to install the base version of PaddleX.
 pip install "paddlex[base]"
 ```
 > ❗ **Note**
-> If the installation methods above are not suitable for your environment, or if you wish to explore more options, please refer to the official **[PaddleX Installation Guide](https://paddlepaddle.github.io/PaddleX/latest/en/installation/installation.html)**.
+> If the installation methods above are not suitable for your environment, or if you wish to explore more options, please refer to the official **[PaddleX](https://github.com/PaddlePaddle/PaddleX)**.
