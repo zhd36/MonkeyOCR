@@ -97,7 +97,7 @@ python parse.py your.pdf -s
 > ```yaml
 > model: PP-DocLayout_plus-L
 > ```
-> 
+
 #### Output Results
 MonkeyOCR generates three types of output files:
 
