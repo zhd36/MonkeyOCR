@@ -4,7 +4,7 @@ weights:
   layoutreader: Relation
 models_dir: model_weight
 layout_config: 
-  model: doclayout_yolo
+  model: doclayout_yolo # PP-DocLayout_plus-L / doclayout_yolo
   reader:
     name: layoutreader
 chat_config:

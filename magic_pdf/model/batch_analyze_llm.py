@@ -44,6 +44,20 @@ class BatchAnalyzeLLM:
                             res['poly'][i] = (
                                 res['poly'][i] - useful_list[1] + useful_list[3]
                             )
+                            
+        elif self.model.layout_model_name == MODEL_NAME.PaddleXLayoutModel:
+            # PP-DocLayout_plus-L
+            paddlex_layout_images = []
+            for image_index, image in enumerate(images):
+                pil_img = Image.fromarray(image)
+                paddlex_layout_images.append(pil_img)
+            images_layout_res += self.model.layout_model.batch_predict(
+                paddlex_layout_images, YOLO_LAYOUT_BASE_BATCH_SIZE 
+            )
+        else: 
+            logger.error(f"Unsupported layout model name: {self.model.layout_model_name}")
+            raise ValueError(f"Unsupported layout model name: {self.model.layout_model_name}")
+
         logger.info(
             f'layout time: {round(time.time() - layout_start_time, 2)}, image num: {len(images)}'
         )
