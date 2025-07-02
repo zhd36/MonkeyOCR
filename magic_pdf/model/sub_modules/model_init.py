@@ -3,18 +3,18 @@ from loguru import logger
 
 from magic_pdf.config.constants import MODEL_NAME
 from magic_pdf.model.model_list import AtomicModel
-from magic_pdf.model.sub_modules.layout.doclayout_yolo.DocLayoutYOLO import \
-    DocLayoutYOLOModel
-from magic_pdf.model.sub_modules.layout.paddlex_layout.PaddleXLayoutModel import \
-    PaddleXLayoutModelWrapper
 
 def doclayout_yolo_model_init(weight, device='cpu'):
+    from magic_pdf.model.sub_modules.layout.doclayout_yolo.DocLayoutYOLO import \
+        DocLayoutYOLOModel
     if str(device).startswith("npu"):
         device = torch.device(device)
     model = DocLayoutYOLOModel(weight, device)
     return model
 
 def paddex_layout_model_init(model_name: str, device: str):
+    from magic_pdf.model.sub_modules.layout.paddlex_layout.PaddleXLayoutModel import \
+        PaddleXLayoutModelWrapper
     model = PaddleXLayoutModelWrapper(model_name=model_name, device=device)
     return model
 
