@@ -84,6 +84,4 @@ class PaddleXLayoutModelWrapper:
         
         # The model.predict itself handles batching, but we call it once.
         paddlex_outputs = list(self.model.predict(prepared_images, batch_size=batch_size, layout_nms=True))
-        print('1')
-        print(paddlex_outputs)
         return [self._process_paddlex_result(res) for res in paddlex_outputs]
