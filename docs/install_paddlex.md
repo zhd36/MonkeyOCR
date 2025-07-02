@@ -1,19 +1,19 @@
-# `PP-DocLayout_plus-L` Installation and Usage Guide
+# `PP-DocLayout_plus-L` Usage Guide
 
 We have added support for the [PP-DocLayout_plus-L](https://huggingface.co/PaddlePaddle/PP-DocLayout-L) model, which offers improved performance over `doclayout_yolo`.
 
-This guide will walk you through the necessary steps to install and enable the new model.
+This guide will walk you through the necessary steps to use the new model.
 
 ## How to Use
 #### **1.  Modify the Configuration File**
 
-Update the `model` field in the `model_configs. yaml` file at the project root to `PP-DocLayout_plus-L`.
+Update the `model` field in the [`model_configs.yaml`](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/model_configs.yaml#L7) file at the project root to `PP-DocLayout_plus-L`.
 
 > ```yaml
 > layout_config: 
 >   model: PP-DocLayout_plus-L # PP-DocLayout_plus-L / doclayout_yolo
 > ```
-
+> 💡 Note: The model weights will be downloaded automatically the first time you run the program.  No manual download is required.
 #### **2.  Install Dependencies**
 
 To use `PP-DocLayout_plus-L`, you must install two additional core libraries, **PaddlePaddle** and **PaddleX**, on top of the project's base environment (from `requirements.txt`).
