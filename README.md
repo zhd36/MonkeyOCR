@@ -90,7 +90,7 @@ python parse.py your.pdf -s
 > doclayout_yolo: Structure/layout_zh.pt
 > ```
 >
-> We have added support for the [PP-DocLayout_plus-L](https://huggingface.co/PaddlePaddle/PP-DocLayout-L), which offers improved performance over doclayout_yolo.  Please refer to the [Installation Guide](docs/install_paddlex.md).
+> We have added support for the [PP-DocLayout_plus-L](https://huggingface.co/PaddlePaddle/PP-DocLayout-L), which offers improved performance over doclayout_yolo.  Please refer to the [Usage Guide](docs/install_paddlex.md).
 >
 > To use this model, please update the configuration file [`model_configs.yaml`](https://github.com/Yuliang-Liu/MonkeyOCR/blob/main/model_configs.yaml#L7) as follows:
 >
